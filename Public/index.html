@@ -7,10 +7,21 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
     <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <link rel="manifest" href="/manifest.json">
     <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
     <title>Mobile App</title>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(() => console.log("Service Worker Registered"))
+                .catch(e => console.log(e));
+        }
+    </script>
 </head>
 <body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+        </style>
     <ons-page>
         <ons-tabbar id="tabbar">
           <ons-tab page="home.html" icon="ion-md-home" label="Home"></ons-tab>
@@ -18,33 +29,33 @@
         </ons-tabbar>
       </ons-page>
       
-      <template id="home.html">
+      <template id="home.html" >
         <ons-navigator id="nav">
           <ons-page>
             <ons-toolbar>
-              <div class="center">Photo Feed</div>
+              <div class="center" style="font-family: 'Bebas Neue', cursive; background: #0b0a0e; color: white;"> Photo Feed</div>
             </ons-toolbar>
             
-            <ons-list>
+            <ons-list style="background: #1D1A31; " >
               <ons-list-item modifier="nodivider" onclick="nav.pushPage('terry-profile.html')">
-                <div class="left"><img class="list-item__thumbnail" src="https://api.adorable.io/avatars/285/face1.png" /></div>
-                <div class="center">
-                  <span class="list-item__title">Terry</span>
+                <div class="left"><img class="list-item__thumbnail" src="foto_13.jpg" /></div>
+                <div class="center" style="color: white;" >
+                  <span class="list-item__title">Foto</span>
                   <span class="list-item__subtitle">(Tap here to view profile)</span>
                 </div>
               </ons-list-item>
       
-              <img style="width: 100%" src="https://picsum.photos/seed/one/800" />
+              <img style="width: 100%;" src="https://picsum.photos/seed/one/800" />
       
               <ons-list-item modifier="nodivider" onclick="nav.pushPage('julie-profile.html')">
-                <div class="left"><img class="list-item__thumbnail" src="https://api.adorable.io/avatars/285/face2.png" /></div>
-                <div class="center">
-                  <span class="list-item__title">Julie</span>
+                <div class="left"><img class="list-item__thumbnail" src="foto_13.jpg" /></div>
+                <div class="center" style="color: white;">
+                  <span class="list-item__title">Foto</span>
                   <span class="list-item__subtitle">(Tap here to view profile)</span>
                 </div>
               </ons-list-item>
       
-              <img style="width: 100%" src="https://picsum.photos/seed/haha/800" />
+              <img  style="width: 100%;" src="https://picsum.photos/seed/haha/800" />
       
             </ons-list>
           </ons-page>
@@ -54,7 +65,7 @@
       <template id="my-profile.html">
         <ons-page>
           <ons-card>
-            <img src="https://api.adorable.io/avatars/285/yourself.png" style="width: 100%" />
+            <img src="pf.jpg" style="width: 100%" />
             <div class="title">
               Myself
             </div>
