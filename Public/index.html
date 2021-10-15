@@ -4,11 +4,111 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
     <title>Mobile App</title>
 </head>
-<body style="background-color: #B1EDE8;">
- <h1 style="font-family: 'Times New Roman', Times, serif; text-align: center;" >Hoi hoi</h1>   
- <p>Dit is een paragraaf</p>
+<body>
+    <ons-page>
+        <ons-tabbar id="tabbar">
+          <ons-tab page="home.html" icon="ion-md-home" label="Home"></ons-tab>
+          <ons-tab page="my-profile.html" icon="ion-md-person" label="My Profile"></ons-tab>
+        </ons-tabbar>
+      </ons-page>
+      
+      <template id="home.html">
+        <ons-navigator id="nav">
+          <ons-page>
+            <ons-toolbar>
+              <div class="center">Photo Feed</div>
+            </ons-toolbar>
+            
+            <ons-list>
+              <ons-list-item modifier="nodivider" onclick="nav.pushPage('terry-profile.html')">
+                <div class="left"><img class="list-item__thumbnail" src="https://api.adorable.io/avatars/285/face1.png" /></div>
+                <div class="center">
+                  <span class="list-item__title">Terry</span>
+                  <span class="list-item__subtitle">(Tap here to view profile)</span>
+                </div>
+              </ons-list-item>
+      
+              <img style="width: 100%" src="https://picsum.photos/seed/one/800" />
+      
+              <ons-list-item modifier="nodivider" onclick="nav.pushPage('julie-profile.html')">
+                <div class="left"><img class="list-item__thumbnail" src="https://api.adorable.io/avatars/285/face2.png" /></div>
+                <div class="center">
+                  <span class="list-item__title">Julie</span>
+                  <span class="list-item__subtitle">(Tap here to view profile)</span>
+                </div>
+              </ons-list-item>
+      
+              <img style="width: 100%" src="https://picsum.photos/seed/haha/800" />
+      
+            </ons-list>
+          </ons-page>
+        </ons-navigator>
+      </template>
+      
+      <template id="my-profile.html">
+        <ons-page>
+          <ons-card>
+            <img src="https://api.adorable.io/avatars/285/yourself.png" style="width: 100%" />
+            <div class="title">
+              Myself
+            </div>
+            <div class="content">
+              Hi, I'm Myself!
+            </div>
+          </ons-card>
+        </ons-page>
+      </template>
+      
+      <template id="terry-profile.html">
+        <ons-page>
+          <ons-toolbar>
+            <div class="left">
+              <ons-back-button></ons-back-button>
+            </div>
+            <div class="center">
+              Terry's Profile 
+            </div>
+          </ons-toolbar>
+      
+          <ons-card>
+            <img src="https://api.adorable.io/avatars/285/face1.png" style="width: 100%" />
+            <div class="title">
+              Terry
+            </div>
+            <div class="content">
+              Hi, I'm Terry!
+            </div>
+          </ons-card>
+        </ons-page>
+      </template>
+      
+      <template id="julie-profile.html">
+        <ons-page>
+          <ons-toolbar>
+            <div class="left">
+              <ons-back-button></ons-back-button>
+            </div>
+            <div class="center">
+              Julie's Profile 
+            </div>
+          </ons-toolbar>
+      
+          <ons-card>
+            <img src="https://api.adorable.io/avatars/285/face2.png" style="width: 100%" />
+            <div class="title">
+              Julie
+            </div>
+            <div class="content">
+              Hi, I'm Julie!
+            </div>
+          </ons-card>
+        </ons-page>
+      </template>
 </body>
 </html>
